@@ -14,11 +14,141 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+import os
 import webapp2
+import jinja2
 
-class MainHandler(webapp2.RequestHandler):
+from user import User
+
+template_dir = os.path.join(os.path.dirname(__file__), 'templates')
+jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
+    autoescape=True)
+
+
+DEBUG = True
+
+class Handler(webapp2.RequestHandler):
+
+    def write(self, *a, **kw):
+        self.response.out.write(*a, **kw)
+
+    def render_str(self, template, **params):
+        t = jinja_env.get_template(template)
+        return t.render(params)
+
+    def render(self, template, **kw):
+        self.write(self.render_str(template, **kw))
+
+    def generate_cookie(self, val):
+        import hmac
+        return str("%s|%s" % (val, hmac.new(SECRET, str(val)).hexdigest()))
+
+    def get_cookie(self, cookie):
+        val = cookie.split('|')[0]
+        if self.generate_cookie(val) == cookie:
+            return val
+        return None
+
+class Signup(Handler):
+    username_error = ""
+    password_error = ""
+    verify_error = ""
+    email_error = ""
+
+    def render_form(self, username="",email=""):
+        self.render('signup.html', username=username,
+            username_error=self.username_error,
+            password_error=self.password_error,
+            verify_error=self.verify_error,
+            email=email,
+            email_error=self.email_error)
+
+    def validate(self, username, password, verify, email):
+        import re
+
+        valid = True
+        
+        if not re.match(r"^[a-zA-Z0-9_-]{3,20}$", username):
+            self.username_error = "That's not a valid username."
+            valid = False
+
+        # check not repeated username
+        user = User.get_by_username(username)
+        if user:
+            self.username_error = "The user already exists."
+            valid = False
+
+        if not re.match(r"^.{3,20}$", password):
+            self.password_error = "That wasn't a valid password."
+            valid = False
+        else:
+            if not verify == password:
+                self.verify_error = "Your passwords didn't match."
+                valid = False
+
+        if email.strip() != "" and not re.match(r"^[\S]+@[\S]+\.[\S]+$", email):
+            self.email_error = "That's not a valid email."
+            valid = False
+        
+        return valid
+
     def get(self):
-        self.response.out.write('Hello world!')
+        self.render_form()
 
-app = webapp2.WSGIApplication([('/', MainHandler)],
-                              debug=True)
+    def post(self):
+        from cgi import escape
+        user_username = self.request.get('username')
+        user_password = self.request.get('password')
+        user_verify = self.request.get('verify')
+        user_email = self.request.get('email')
+
+        username = escape(user_username)
+        email = escape(user_email)
+        if self.validate(username, user_password, user_verify, email):
+            u = User(username=username,
+                password_hash=User.get_password_hash(user_password), email=email)
+            u.put()
+            self.response.headers.add_header('Set-Cookie', 'user=%s; Path=/' %
+                self.generate_cookie(u.key()))
+            self.redirect('/')
+        else:
+            self.render_form(username, email)
+
+class Login(Handler):
+    def get(self):
+        self.render('login.html')
+
+    def post(self):
+        user_username = self.request.get('username')
+        user_password = self.request.get('password')
+
+        user = User.get_by_username(user_username)
+        if user and user.valid_password(user_password):
+            self.response.headers.add_header('Set-Cookie', 'user=%s; Path=/' %
+                self.generate_cookie(user.key()))
+            self.redirect('/')
+        else:
+            self.render('login.html', login_error = 'Invalid login')
+
+class Logout(Handler):
+    def get(self):
+        self.response.headers.add_header('Set-Cookie', 'user=; Path=/')
+        self.redirect('/')
+
+class EditPage(Handler):
+	def get():
+		pass
+	
+class WikiPage(Handler):
+	def get(self, page):
+		self.render('page.html')
+		
+
+PAGE_RE = r'(/(?:[a-zA-Z0-9_-]+/?)*)'
+app = webapp2.WSGIApplication([('/signup', Signup),
+                               ('/login', Login),
+                               ('/logout', Logout),
+                               ('/_edit' + PAGE_RE, EditPage),
+                               (PAGE_RE, WikiPage),
+                               ],
+                              debug=DEBUG)
