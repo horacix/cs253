@@ -24,7 +24,7 @@ template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
     autoescape=True)
 
-
+SECRET = "palabra super secreta"
 DEBUG = True
 
 class Handler(webapp2.RequestHandler):
