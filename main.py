@@ -138,7 +138,7 @@ class Logout(Handler):
 class EditPage(Handler):
 	def get():
 		pass
-	
+
 class WikiPage(Handler):
 	def get(self, page):
 		self.render('page.html')
