@@ -1,0 +1,554 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"get",
+				"get"
+			],
+			[
+				"he",
+				"header	Tag"
+			],
+			[
+				"re",
+				"redirect"
+			],
+			[
+				"mem",
+				"memcache"
+			],
+			[
+				"F",
+				"FlushHandler"
+			],
+			[
+				"cache",
+				"cached"
+			],
+			[
+				"cach",
+				"cached"
+			],
+			[
+				"str",
+				"str"
+			],
+			[
+				"va",
+				"valid_password"
+			],
+			[
+				"user",
+				"user_username"
+			],
+			[
+				"get_",
+				"get_by_username"
+			],
+			[
+				"user_",
+				"user_password"
+			],
+			[
+				"pas",
+				"password_hash"
+			],
+			[
+				"us",
+				"username"
+			],
+			[
+				"pass",
+				"password_hash"
+			],
+			[
+				"ren",
+				"render_page"
+			],
+			[
+				"H",
+				"Handler"
+			],
+			[
+				"templa",
+				"template_dir"
+			],
+			[
+				"pro",
+				"probs"
+			],
+			[
+				"ex",
+				"expected"
+			],
+			[
+				"for",
+				"foreach"
+			],
+			[
+				"st",
+				"stars1"
+			],
+			[
+				"stars",
+				"stars2"
+			],
+			[
+				"use",
+				"user_verify"
+			],
+			[
+				"vali",
+				"validate"
+			],
+			[
+				"em",
+				"email"
+			],
+			[
+				"ver",
+				"verify"
+			],
+			[
+				"usern",
+				"username"
+			],
+			[
+				"wel",
+				"welcome_page"
+			],
+			[
+				"ema",
+				"email_error"
+			],
+			[
+				"v",
+				"verify_error"
+			],
+			[
+				"as",
+				"ascii_lowercase"
+			],
+			[
+				"asci",
+				"ascii_lowercase"
+			],
+			[
+				"map",
+				"maprow"
+			],
+			[
+				"B",
+				"B"
+			],
+			[
+				"su",
+				"surprises_left"
+			],
+			[
+				"combi",
+				"combines"
+			],
+			[
+				"oppo",
+				"opposed"
+			],
+			[
+				"com",
+				"combinations"
+			],
+			[
+				"ela",
+				"elapsed"
+			],
+			[
+				"elap",
+				"elapsed"
+			],
+			[
+				"el",
+				"elapsed_o"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app.yaml",
+			"settings":
+			{
+				"buffer_size": 277,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "main.py",
+			"settings":
+			{
+				"buffer_size": 4878,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "user.py",
+			"settings":
+			{
+				"buffer_size": 996,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "page.py",
+			"settings":
+			{
+				"buffer_size": 157,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/page.html",
+			"settings":
+			{
+				"buffer_size": 241,
+				"line_ending": "Unix",
+				"name": "<!DOCTYPE html>"
+			}
+		},
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 232,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"Snippet: ",
+				"Snippet: Read File"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 139.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/horacix/python_apps/cs253-final/templates/signup.html",
+		"/home/horacix/python_apps/cs253-final/templates/login.html",
+		"/home/horacix/google_appengine/horacix-udacity/templates/main.html",
+		"/home/horacix/google_appengine/horacix-udacity/blog.py",
+		"/home/horacix/google_appengine/horacix-udacity/templates/login.html",
+		"/home/horacix/google_appengine/horacix-udacity/app.yaml",
+		"/home/horacix/google_appengine/horacix-udacity/templates/welcome.html",
+		"/home/horacix/google_appengine/horacix-udacity/templates/signup.html",
+		"/home/horacix/google_appengine/horacix-udacity/templates/newpost.html",
+		"/home/horacix/perl_apps/codejam/2012/1A/a.out",
+		"/home/horacix/perl_apps/codejam/2012/1A/a2.pl",
+		"/home/horacix/perl_apps/codejam/2012/1A/a.pl",
+		"/home/horacix/perl_apps/codejam/2012/1A/a.in",
+		"/home/horacix/perl_apps/codejam/2012/1A/b.pl",
+		"/home/horacix/perl_apps/codejam/2012/1A/b.in",
+		"/home/horacix/perl_apps/codejam/2012/1A/b.out",
+		"/home/horacix/perl_apps/codejam/2012/1A/B-small-attempt2.in",
+		"/home/horacix/perl_apps/codejam/2012/1A/B-small-attempt1.in",
+		"/home/horacix/perl_apps/codejam/2012/1A/B-small-attempt0.in",
+		"/home/horacix/google_appengine/horacix-udacity/main.py",
+		"/home/horacix/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/home/horacix/.config/sublime-text-2/Packages/User/Python.sublime-settings",
+		"/home/horacix/google_appengine/README",
+		"/home/horacix/perl_apps/codejam/2012/Qualy/d.in",
+		"/home/horacix/perl_apps/codejam/2012/Qualy/d.pl",
+		"/home/horacix/perl_apps/codejam/2012/Qualy/c.pl",
+		"/home/horacix/perl_apps/codejam/2012/Qualy/b.out",
+		"/home/horacix/perl_apps/codejam/2012/Qualy/B-small-attempt0.in",
+		"/home/horacix/perl_apps/codejam/2012/Qualy/b.pl",
+		"/home/horacix/perl_apps/codejam/2012/Qualy/a.pl",
+		"/home/horacix/perl_apps/codejam/2012/Qualy/A-small-attempt1.in",
+		"/home/horacix/perl_apps/codejam/2012/Qualy/a.out",
+		"/home/horacix/perl_apps/codejam/2011-B.pl",
+		"/home/horacix/perl_apps/codejam/b.out",
+		"/home/horacix/Downloads/B-large-practice.in",
+		"/home/horacix/perl_apps/codejam/2011-A.pl",
+		"/home/horacix/perl_apps/codejam/b.in"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			" "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app.yaml",
+					"settings":
+					{
+						"buffer_size": 277,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								261,
+								261
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "main.py",
+					"settings":
+					{
+						"buffer_size": 4878,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4441,
+								4441
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 216.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "user.py",
+					"settings":
+					{
+						"buffer_size": 996,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								37,
+								37
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "page.py",
+					"settings":
+					{
+						"buffer_size": 157,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								157,
+								157
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "templates/page.html",
+					"settings":
+					{
+						"buffer_size": 241,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								187,
+								187
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<!DOCTYPE html>",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": ".gitignore",
+					"settings":
+					{
+						"buffer_size": 232,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								232,
+								232
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

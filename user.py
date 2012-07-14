@@ -30,4 +30,4 @@ class User(db.Model):
             username)
         if users.count() > 0:
             return users[0]
-        return None        
+        return None

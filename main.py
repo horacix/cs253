@@ -19,6 +19,7 @@ import webapp2
 import jinja2
 
 from user import User
+from page import Page
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
@@ -136,12 +137,20 @@ class Logout(Handler):
         self.redirect('/')
 
 class EditPage(Handler):
-	def get():
-		pass
+    def get(self, page_name):
+        page = Page.get_by_name(page_name)
+        content = ''
+        if page:
+            content = page.content
+        self.render('edit.html', content=content)
 
 class WikiPage(Handler):
-	def get(self, page):
-		self.render('page.html')
+    def get(self, page_name):
+        page = Page.get_by_name(page_name)
+        if page:
+            self.render('page.html', content=page.content)
+        else:
+            self.redirect('/_edit' + page_name)
 		
 
 PAGE_RE = r'(/(?:[a-zA-Z0-9_-]+/?)*)'
