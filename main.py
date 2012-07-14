@@ -144,11 +144,23 @@ class EditPage(Handler):
             content = page.content
         self.render('edit.html', content=content)
 
+    def post(self, page_name):
+        content = self.request.get('content')
+        page = Page.get_by_name(page_name)
+        if page:
+            page.content = content
+            page.save()
+        else:
+            page = Page(name=page_name, content=content)
+            page.put()
+        self.redirect(page_name)
+
 class WikiPage(Handler):
     def get(self, page_name):
         page = Page.get_by_name(page_name)
         if page:
-            self.render('page.html', content=page.content)
+            self.render('page.html', content=page.content,
+                name=page.name)
         else:
             self.redirect('/_edit' + page_name)
 		
