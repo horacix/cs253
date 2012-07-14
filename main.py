@@ -45,10 +45,18 @@ class Handler(webapp2.RequestHandler):
         return str("%s|%s" % (val, hmac.new(SECRET, str(val)).hexdigest()))
 
     def get_cookie(self, cookie):
+        if not cookie:
+            return None
         val = cookie.split('|')[0]
         if self.generate_cookie(val) == cookie:
             return val
         return None
+
+    def initialize(self, *a, **kw):
+        webapp2.RequestHandler.initialize(self, *a, **kw)
+        cookie = self.request.cookies.get('user')
+        uid = self.get_cookie(cookie)
+        self.user = uid and User.get_by_id(int(uid))
 
 class Signup(Handler):
     username_error = ""
@@ -110,7 +118,7 @@ class Signup(Handler):
                 password_hash=User.get_password_hash(user_password), email=email)
             u.put()
             self.response.headers.add_header('Set-Cookie', 'user=%s; Path=/' %
-                self.generate_cookie(u.key()))
+                self.generate_cookie(u.key().id()))
             self.redirect('/')
         else:
             self.render_form(username, email)
@@ -126,7 +134,7 @@ class Login(Handler):
         user = User.get_by_username(user_username)
         if user and user.valid_password(user_password):
             self.response.headers.add_header('Set-Cookie', 'user=%s; Path=/' %
-                self.generate_cookie(user.key()))
+                self.generate_cookie(user.key().id()))
             self.redirect('/')
         else:
             self.render('login.html', login_error = 'Invalid login')
@@ -138,6 +146,8 @@ class Logout(Handler):
 
 class EditPage(Handler):
     def get(self, page_name):
+        if not self.user:
+            self.redirect('/login')
         page = Page.get_by_name(page_name)
         content = ''
         if page:
@@ -149,10 +159,9 @@ class EditPage(Handler):
         page = Page.get_by_name(page_name)
         if page:
             page.content = content
-            page.save()
         else:
             page = Page(name=page_name, content=content)
-            page.put()
+        page.put()
         self.redirect(page_name)
 
 class WikiPage(Handler):
@@ -160,7 +169,8 @@ class WikiPage(Handler):
         page = Page.get_by_name(page_name)
         if page:
             self.render('page.html', content=page.content,
-                name=page.name)
+                name=page.name,
+                user=self.user)
         else:
             self.redirect('/_edit' + page_name)
 		

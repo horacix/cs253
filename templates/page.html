@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head><title>CS 253 Wiki</title></head>
-<body><header><a href="/_edit{{name}}">edit</a> | history&nbsp;&nbsp;&nbsp;<a href="/login">login</a> | <a href="/signup">signup</a></header>
+<body><header>
+    {% if user %}<a href="/_edit{{name}}">edit</a> | history&nbsp;&nbsp;&nbsp;{{user.username}} (<a href="/logout">logout</a>){% else %}<a href="/login">login</a> | <a href="/signup">signup</a>{% endif %}
+</header>
 <div>{{content}}</div>
 
 <a href="/">Visit the frontpage</a>

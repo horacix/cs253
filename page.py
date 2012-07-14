@@ -7,8 +7,5 @@ class Page(db.Model):
 
     @staticmethod
     def get_by_name(name):
-        pages = db.GqlQuery("select * from Page where name = :1",
-            name)
-        if pages.count() > 0:
-            return pages[0]
-        return None
+        p = Page.all().filter('name =', name).get()
+        return p
